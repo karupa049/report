@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Python トレースゲーム</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+</head>
+<body>
+<h1>Python トレースゲーム</h1>
+
+<div class="main-container">
+<div id="code-container" class="code-display"></div>
+
+<div id="game-area">
+<p id="question"></p>
+<div>
+<input type="text" id="answer-input" placeholder="答えを入力">
+<button id="submit-button">回答する</button>
+<button id="confirm-button">確認</button> </div>
+<button id="next-button">次の問題へ</button>
+<p id="result"></p>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

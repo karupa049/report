@@ -1,0 +1,157 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #eef2f5; /* 背景色を少し変えて見やすく */
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* --- 全体を囲むコンテナ --- */
+.main-container {
+    display: flex;
+    gap: 20px; /* エリア間の隙間 */
+    max-width: 1200px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央揃え */
+}
+
+/* --- 左側のコード表示エリア --- */
+#code-container {
+    flex: 3; /* 幅の比率を3に設定 */
+    background-color: #2d2d2d; /* ダークテーマの背景色 */
+    color: #f8f8f2; /* 明るい文字色 */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* 角を少し丸く */
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    white-space: pre;
+    overflow-x: auto; /* コードが長い場合スクロールさせる */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 影を付けて立体感を出す */
+}
+
+/* コードの各行のスタイル */
+.line {
+    display: flex;
+    align-items: baseline;
+}
+
+/* 行番号のスタイル */
+.line-number {
+    display: inline-block;
+    width: 2.5em; /* 幅を少し広げる */
+    text-align: right;
+    margin-right: 1.5em;
+    color: #888;
+    user-select: none; /* 行番号を選択できないようにする */
+}
+
+/* --- 右側のゲームエリア --- */
+#game-area {
+    flex: 2; /* 幅の比率を2に設定 */
+    display: flex;
+    flex-direction: column; /* 中の要素を縦に並べる */
+    gap: 15px; /* 問題文や入力欄の間の隙間 */
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- ゲームエリア内の各要素のスタイル --- */
+
+#question {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    color: #2c3e50;
+}
+
+#game-area div {
+    display: flex;
+    align-items: center;
+}
+
+#answer-input {
+    flex-grow: 1; /* 入力欄が伸びるように */
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#submit-button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s; /* ホバー時の色変化を滑らかに */
+}
+
+#submit-button:hover {
+    background-color: #2980b9;
+}
+
+/* 「次の問題へ」ボタンのスタイル */
+#next-button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #2ecc71; /* 少し目立つ色に */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    display: none; /* 初期状態では非表示 */
+    transition: background-color 0.2s;
+}
+
+#next-button:hover {
+    background-color: #27ae60;
+}
+
+#result {
+    font-weight: bold;
+    margin: 0;
+    min-height: 1.6em; /* 結果表示エリアの高さを確保 */
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* JavaScript側で結果に応じて色を付けるため、ここでは色指定はしない */
+
+/* --- ★ここから追加 --- */
+
+/* 「確認」ボタンのスタイル */
+#confirm-button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #e67e22; /* オレンジ系の色 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+#confirm-button:hover {
+    background-color: #d35400;
+}
+
+#confirm-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+
+/* コードをハイライトするためのスタイル */
+.line.highlight {
+    background-color: #44587c; /* 少し目立つ背景色 */
+    transition: background-color 0.3s ease;
+}
